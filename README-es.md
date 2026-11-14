@@ -38,7 +38,7 @@ Descargue el jar precompilado desde la [última release](https://github.com/Dayd
 y ejecútelo con permisos de captura:
 
 ```bash
-sudo -E java -jar supervisor-de-red-0.1.0.jar
+sudo -E java -jar supervisor-de-red-0.1.1.jar
 ```
 
 En Linux, `sudo -E` conserva el entorno de su sesión de escritorio al elevar
@@ -51,10 +51,10 @@ para más detalles.
 
 ```bash
 ./mvnw clean package
-java -jar target/supervisor-de-red-0.1.0.jar
+java -jar target/supervisor-de-red-0.1.1.jar
 ```
 
-El jar ejecutable se genera en `target/supervisor-de-red-0.1.0.jar`.
+El jar ejecutable se genera en `target/supervisor-de-red-0.1.1.jar`.
 
 ## Uso
 

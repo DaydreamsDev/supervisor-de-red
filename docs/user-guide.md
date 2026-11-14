@@ -21,7 +21,7 @@ Java 21 or later on all platforms.
 
 ```bash
 ./mvnw clean package          # build
-java -jar target/supervisor-de-red-0.1.0.jar   # run
+java -jar target/supervisor-de-red-0.1.1.jar   # run
 ./mvnw test                   # test
 ```
 
@@ -32,7 +32,7 @@ popup menus):
 
 ```bash
 sudo setcap cap_net_raw,cap_net_admin+eip "$(readlink -f "$(command -v java)")"
-java -jar target/supervisor-de-red-0.1.0.jar
+java -jar target/supervisor-de-red-0.1.1.jar
 ```
 
 If you cannot grant the capability, `sudo -E java -jar …` keeps your session
