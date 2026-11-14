@@ -37,6 +37,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.timeout;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -248,7 +249,8 @@ class Pcap4jCaptureServiceTest {
 
         InOrder inOrder = inOrder(handle);
         inOrder.verify(handle).setFilter("tcp", BpfProgram.BpfCompileMode.OPTIMIZE);
-        inOrder.verify(handle).loop(eq(-1), any(org.pcap4j.core.PacketListener.class));
+        inOrder.verify(handle, timeout(5000))
+                .loop(eq(-1), any(org.pcap4j.core.PacketListener.class));
     }
 
     @Test
@@ -260,7 +262,7 @@ class Pcap4jCaptureServiceTest {
 
         verify(handle, never()).setFilter(anyString(),
                 any(BpfProgram.BpfCompileMode.class));
-        verify(handle).loop(eq(-1), any(org.pcap4j.core.PacketListener.class));
+        verify(handle, timeout(5000)).loop(eq(-1), any(org.pcap4j.core.PacketListener.class));
     }
 
     @Test
