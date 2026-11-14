@@ -22,7 +22,7 @@ Java 21 o superior en todas las plataformas.
 
 ```bash
 ./mvnw clean package          # compilar
-java -jar target/supervisor-de-red-0.1.0.jar   # ejecutar
+java -jar target/supervisor-de-red-0.1.1.jar   # ejecutar
 ./mvnw test                   # probar
 ```
 
@@ -33,7 +33,7 @@ de ventanas descolocan o cierran sus menús emergentes):
 
 ```bash
 sudo setcap cap_net_raw,cap_net_admin+eip "$(readlink -f "$(command -v java)")"
-java -jar target/supervisor-de-red-0.1.0.jar
+java -jar target/supervisor-de-red-0.1.1.jar
 ```
 
 Si no puede conceder la capacidad, `sudo -E java -jar …` conserva el entorno de su

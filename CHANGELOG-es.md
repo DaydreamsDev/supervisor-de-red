@@ -5,6 +5,17 @@ Todos los cambios notables de este proyecto se documentan en este archivo.
 El formato se basa en [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 y este proyecto sigue [Versionado Semántico](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-11-14
+
+### Corregido
+
+- Se estabilizó la prueba asíncrona del bucle de captura para eliminar un fallo
+  que solo ocurría en CI.
+
+### Cambiado
+
+- README: se añadieron secciones de descarga de la release, uso y contribución.
+
 ## [0.1.0] - 2026-11-14
 
 ### Añadido
