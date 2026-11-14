@@ -1,0 +1,21 @@
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+.mvn-build-lock/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
