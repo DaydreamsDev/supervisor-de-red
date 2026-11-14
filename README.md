@@ -1,5 +1,8 @@
 # Supervisor de Red
 
+[![CI](https://github.com/DaydreamsDev/supervisor-de-red/actions/workflows/ci.yml/badge.svg)](https://github.com/DaydreamsDev/supervisor-de-red/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > [English](README.md) | [Español](README-es.md)
 
 Desktop network traffic visualizer for Linux, macOS, and Windows. Capture packets
@@ -28,21 +31,36 @@ Originally developed in 2015 as a university project, updated and delivered in 2
   - macOS: root permission
   - Windows: [Npcap](https://npcap.com/)
 
-## Build
+## Run it
+
+Download the prebuilt jar from the [latest release](https://github.com/DaydreamsDev/supervisor-de-red/releases/latest)
+and start it with capture privileges:
+
+```bash
+sudo -E java -jar supervisor-de-red-0.1.0.jar
+```
+
+On Linux, `sudo -E` keeps your desktop session environment while elevating, so the
+interface renders correctly. Alternatives: grant `CAP_NET_RAW` to your Java binary
+and run as your user, or run as root. See the
+[user guide troubleshooting](docs/user-guide.md#troubleshooting) for details.
+
+### Build from source
 
 ```bash
 ./mvnw clean package
+java -jar target/supervisor-de-red-0.1.0.jar
 ```
 
 The shaded runnable jar is produced at `target/supervisor-de-red-0.1.0.jar`.
 
-## Run
+## Usage
 
-```bash
-java -jar target/supervisor-de-red-0.1.0.jar
-```
+1. Start the application with capture privileges (see [Run it](#run-it)).
+2. Pick a network interface in the Interface panel and press **Refresh** if the list is empty.
+3. Start the video or service you want to observe, press **CAPTURE**, and watch the output area and charts.
 
-Capture requires the privileges listed above.
+Full walkthrough: [user guide](docs/user-guide.md).
 
 ## Test
 
@@ -51,6 +69,14 @@ Capture requires the privileges listed above.
 ```
 
 The suite runs without native capture or root privileges.
+
+## Contributing
+
+Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) first:
+
+- Work on a `type/description` branch created from `develop` (for example `fix/filter-recovery`).
+- Open a pull request against `develop` with a conventional commit title and a short list of key changes.
+- All tests must pass (`./mvnw verify`).
 
 ## Documentation
 

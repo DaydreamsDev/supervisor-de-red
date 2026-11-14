@@ -1,5 +1,8 @@
 # Supervisor de Red
 
+[![CI](https://github.com/DaydreamsDev/supervisor-de-red/actions/workflows/ci.yml/badge.svg)](https://github.com/DaydreamsDev/supervisor-de-red/actions/workflows/ci.yml)
+[![Licencia: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > [English](README.md) | [Español](README-es.md)
 
 Visualizador de tráfico de red de escritorio para Linux, macOS y Windows.
@@ -29,21 +32,37 @@ Desarrollado originalmente en 2015 como proyecto universitario, actualizado y en
   - macOS: permisos de root
   - Windows: [Npcap](https://npcap.com/)
 
-## Compilar
+## Ejecutar
+
+Descargue el jar precompilado desde la [última release](https://github.com/DaydreamsDev/supervisor-de-red/releases/latest)
+y ejecútelo con permisos de captura:
+
+```bash
+sudo -E java -jar supervisor-de-red-0.1.0.jar
+```
+
+En Linux, `sudo -E` conserva el entorno de su sesión de escritorio al elevar
+privilegios, de modo que la interfaz se renderiza correctamente. Alternativas:
+conceder `CAP_NET_RAW` al binario de Java y ejecutar como su usuario, o ejecutar
+como root. Consulte la [solución de problemas de la guía de usuario](docs/user-guide-es.md#solución-de-problemas)
+para más detalles.
+
+### Compilar desde el código fuente
 
 ```bash
 ./mvnw clean package
+java -jar target/supervisor-de-red-0.1.0.jar
 ```
 
 El jar ejecutable se genera en `target/supervisor-de-red-0.1.0.jar`.
 
-## Ejecutar
+## Uso
 
-```bash
-java -jar target/supervisor-de-red-0.1.0.jar
-```
+1. Inicie la aplicación con permisos de captura (véase [Ejecutar](#ejecutar)).
+2. Elija una interfaz de red en el panel Interfaz y pulse **Actualizar** si la lista está vacía.
+3. Inicie el video o servicio que desea observar, pulse **CAPTURA** y observe el área de salida y las gráficas.
 
-La captura requiere los permisos indicados arriba.
+Recorrido completo: [guía de usuario](docs/user-guide-es.md).
 
 ## Probar
 
@@ -52,6 +71,14 @@ La captura requiere los permisos indicados arriba.
 ```
 
 La suite se ejecuta sin captura nativa ni privilegios de root.
+
+## Contribuir
+
+Las contribuciones son bienvenidas. Lea primero [CONTRIBUTING-es.md](CONTRIBUTING-es.md):
+
+- Trabaje en una rama `tipo/descripcion` creada desde `develop` (por ejemplo `fix/filter-recovery`).
+- Abra un pull request contra `develop` con un título de commit convencional y una lista corta de cambios clave.
+- Todas las pruebas deben pasar (`./mvnw verify`).
 
 ## Documentación
 
