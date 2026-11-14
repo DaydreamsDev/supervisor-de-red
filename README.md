@@ -37,7 +37,7 @@ Download the prebuilt jar from the [latest release](https://github.com/Daydreams
 and start it with capture privileges:
 
 ```bash
-sudo -E java -jar supervisor-de-red-0.1.0.jar
+sudo -E java -jar supervisor-de-red-0.1.1.jar
 ```
 
 On Linux, `sudo -E` keeps your desktop session environment while elevating, so the
@@ -49,10 +49,10 @@ and run as your user, or run as root. See the
 
 ```bash
 ./mvnw clean package
-java -jar target/supervisor-de-red-0.1.0.jar
+java -jar target/supervisor-de-red-0.1.1.jar
 ```
 
-The shaded runnable jar is produced at `target/supervisor-de-red-0.1.0.jar`.
+The shaded runnable jar is produced at `target/supervisor-de-red-0.1.1.jar`.
 
 ## Usage
 
